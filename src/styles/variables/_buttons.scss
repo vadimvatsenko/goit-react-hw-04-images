@@ -1,0 +1,24 @@
+%button {
+    display: inline-block;
+    z-index: 2;
+    text-decoration: none;
+    width: 140px;
+    height: 45px;
+    line-height: 45px;
+    border-radius: 45px;
+    font-size: 11px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: $btnTextColor;
+    background: $btnBgColor;
+    box-shadow: $btnBoxShadow;
+    transition: .3s $timing-function;
+}
+
+%button-hover {
+
+    color: $btnTextHoverColor;
+    transform: translateY(-7px);
+}

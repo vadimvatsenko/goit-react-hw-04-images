@@ -1,0 +1,22 @@
+@import 'styles/main.scss';
+
+/*
+ * Стили компонента ImageGallery
+ */
+.ImageGallery {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 1200px;
+
+    text-align: center;
+
+
+    margin-top: 20px;
+
+    padding: 0;
+    list-style: none;
+    margin-left: auto;
+    margin-right: auto;
+}
