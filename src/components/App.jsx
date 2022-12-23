@@ -13,6 +13,8 @@ import Button from "components/Button";
 import { ToastContainer } from 'react-toastify';
 import { ToastError, ToastSuccess } from './Toasts/Toasts';
 
+
+
 export const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [imgName, setImgName] = useState('');
@@ -23,6 +25,8 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [showBtnLoadMore, setBtnLoadMore] = useState(false);
+
+ 
   
   useEffect(() => {
     // если пустая строка, то не выполнять fetch
@@ -46,28 +50,38 @@ export const App = () => {
           ToastError();
           return;
         }
-        if (imgObj.totalHits >= 1 && imgList.length < 12 ) {
+        if (imgObj.totalHits >= 1 && imgList.length < 12) {
           ToastSuccess(imgObj.totalHits, imgName)
         }
         if (imgObj.totalHits > 12) {
           setBtnLoadMore(true)
         }
         if (page === totalPage) {
-           setBtnLoadMore(false)
-         }
+          setBtnLoadMore(false)
+        }
 
-    } catch (error) {
-      setError(error);
-      setStatus('rejected')
+      } catch (error) {
+        setError(error);
+        setStatus('rejected')
 
-    } finally {
+      } finally {
         setIsLoading(false);
-    }
+      }
     
     }
     getImgObj();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    },[ imgName, page])
+  }, [imgName, page]);
+
+  useEffect(() => {
+    if (imgList.length <= 12) {
+      return
+    }
+    window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth',
+      });
+  },[imgList])
    
   const toggleModal = () => {
     setOpenModal(prevState => !prevState)
@@ -80,8 +94,10 @@ export const App = () => {
   };
 
   const handleButtonMore = () => {
-    setPage(prevState => prevState +1)
+    setPage(prevState => prevState + 1);    
   }
+
+
 
   const handleFormSubmit = name => {
     
