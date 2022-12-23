@@ -1,9 +1,10 @@
+//DONE
 import React from "react";
+import PropTypes from 'prop-types';
 import style from './ImageGalleryItem.module.scss';
 
 
 export default function ImageGalleryItem({ imageList, onClick }) {
-   
     return (
         <>
             
@@ -30,6 +31,20 @@ export default function ImageGalleryItem({ imageList, onClick }) {
 
     );
 }
+
+ImageGalleryItem.propTypes = {
+    onClick: PropTypes.func.isRequired,
+    imageList: PropTypes.arrayOf(
+    PropTypes.shape({
+        id: PropTypes.number,
+        webformatURL: PropTypes.string,
+        tags: PropTypes.string,
+        largeImageURL: PropTypes.string,
+      
+    }).isRequired
+  ),
+};
+
 
 
 

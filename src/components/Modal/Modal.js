@@ -42,7 +42,6 @@ export default class Modal extends Component {
         
         <div className={style.overlay} onClick={this.handleBackdropClick}>
             <img className={style.modal} src={imageModal.src} alt={imageModal.alt} />
-            {/* <div className={style.modal}>{this.props.children}</div> */}
            
         </div>,
         modalRoot,

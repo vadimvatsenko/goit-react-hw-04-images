@@ -1,4 +1,6 @@
+// DONE
 import React from "react";
+import PropTypes from 'prop-types';
 import ErrorImg from '../../img/404.svg'
 
 
@@ -17,5 +19,9 @@ export default function Error({ error }) {
                 src={ErrorImg} width='400' alt={error} />
         </div>
     )
+}
+
+Error.propTypes = {
+    error: PropTypes.string.isRequired
 }
 

@@ -1,3 +1,4 @@
+//DONE
 import React from "react";
 import style from "./ImageGallery.module.scss";
 
