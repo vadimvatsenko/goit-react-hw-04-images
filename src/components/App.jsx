@@ -37,7 +37,6 @@ export const App = () => {
         setStatus('resolved');
         setIsLoading(false);
 
-
         if (imgObj.totalHits === 0) {
           setStatus('idle');
           setIsLoading(false);
@@ -67,6 +66,7 @@ export const App = () => {
     
     }
     getImgObj();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ imgName, page])
    
   const toggleModal = () => {
