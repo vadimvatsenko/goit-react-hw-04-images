@@ -70,7 +70,7 @@ export const App = () => {
     
     }
     getImgObj();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, [imgName, page]);
 
   useEffect(() => {
