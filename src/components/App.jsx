@@ -13,8 +13,6 @@ import Button from "components/Button";
 import { ToastContainer } from 'react-toastify';
 import { ToastError, ToastSuccess } from './Toasts/Toasts';
 //
-
-
 export const App = () => {
   const [openModal, setOpenModal] = useState(false);
   const [imgName, setImgName] = useState('');
@@ -26,8 +24,6 @@ export const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [showBtnLoadMore, setBtnLoadMore] = useState(false);
 
- 
-  
   useEffect(() => {
     // если пустая строка, то не выполнять fetch
     if (imgName === '') {
@@ -50,7 +46,7 @@ export const App = () => {
           ToastError();
           return;
         }
-        if (imgObj.totalHits >= 1 && imgList.length < 12) {
+        if (imgObj.totalHits >= 1 && page ===1 ) {
           ToastSuccess(imgObj.totalHits, imgName)
         }
         if (imgObj.totalHits > 12) {
@@ -72,7 +68,7 @@ export const App = () => {
     getImgObj();
 
   }, [imgName, page]);
-
+  
   useEffect(() => {
     if (imgList.length <= 12) {
       return
