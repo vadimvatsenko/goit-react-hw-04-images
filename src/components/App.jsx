@@ -2,7 +2,7 @@ import { useState, useEffect} from 'react';
 import { ReactComponent as SearchIcon } from '../icons/search.svg';
 import { Searchbar } from './Searchbar/Searchbar';
 import SearchBarButton from "./SearchBarButton";
-import Modal from "./Modal";
+import { Modal } from './Modal/Modal';
 import ImageGallery from "components/ImageGallery";
 import ImageGalleryItem from "components/ImageGalleryItem";
 import Loader from "components/Loader";
